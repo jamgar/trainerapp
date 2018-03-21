@@ -15,5 +15,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require highcharts
+//= require chartkicks
 //= require turbolinks
 //= require_tree .
