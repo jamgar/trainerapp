@@ -1,0 +1,11 @@
+<div class="ml-3 mr-3 mt-3">
+  <h1>Dashboard</h1>
+  <%= link_to 'Add New Workout', new_workout_path, class: 'btn btn-primary' %>
+  <hr>
+  <%= image_tag "svg/bar-chart.svg", alt: "Bar Chart", class: 'icon' %>
+  <h3>Graphs of progress will go here</h3>
+    <%= image_tag "svg/pie-chart.svg", alt: "Bar Chart", class: 'icon' %>
+  <hr>
+  <h3>Workouts</h3>
+  <%= render 'workouts/workouts' %>
+</div>

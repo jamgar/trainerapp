@@ -5,3 +5,11 @@
 body {
   padding-top: 3.5rem;
 }
+
+#main-jumbotron {
+  color: white;
+  height: 100vh;
+  background-image: image-url('jumbotron-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

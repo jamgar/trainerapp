@@ -1,0 +1,26 @@
+// Added for devise error message on sign_in
+.alert-alert {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+li {
+  list-style: none;
+}
+
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
+
+.icon {
+  height: 16px;
+}
+
+#error_explanation {
+  padding: 15px 15px 15px 30px;
+  margin-bottom: 30px;
+}

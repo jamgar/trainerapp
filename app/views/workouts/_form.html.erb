@@ -1,0 +1,61 @@
+<%= form_for @workout do |f| %>
+  <% if @workout.errors.any? %>
+    <div class="alert alert-danger" id="error_explanation">
+    <h2><%= pluralize(@workout.errors.count, "error") %>
+    prohibited this exercise from being saved: </h2>
+      <ul>
+        <% @workout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :workout_date %>
+        <%= f.text_field :workout_date, class: 'form-control', placeholder: 'MM-DD-YYYY', :data => {:provide => 'datepicker'} %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label 'Type' %><br>
+        <%= f.select :type_id, Workout.types.keys, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label 'Duration (Hours)' %>
+        <%= f.number_field :duration_in_hr, class: 'form-control', in: 0..24, placeholder: '0' %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label 'Duration (Minutes)' %>
+        <%= f.number_field :duration_in_min, class: 'form-control', in: 0..60, placeholder: '0' %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :distance %>
+        <%= f.number_field :distance, class: 'form-control', in: 0..200, step: 1, placeholder: '0.00' %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, class: 'form-control' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', workouts_path, class: 'btn btn-warning' %>
+<% end %>

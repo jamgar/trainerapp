@@ -1,0 +1,53 @@
+<div class="container mt-3">
+  <div class="col-md-12">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h2 class="show-header pb-3 text-center"><%= "#{@workout.user.first_name}'s Workout Details" %></h2>
+        <h4>Title: <%= @workout.title.capitalize %></h4>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Workout Date:</strong> <%= @workout.workout_date %></p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Workout Type:</strong> <%= Workout.types.keys[@workout.type_id].capitalize %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h4>Duration</h4>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Hours: <%= @workout.duration_in_hr ||= '0' %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Minutes <%= @workout.duration_in_min ||= '0' %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Distance <%= @workout.distance ||= '0' %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Comment:</h4>
+            <p><%= @workout.comment %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <%= link_to 'Back', workouts_path, class: 'btn btn-info' %>
+      <%= link_to 'Edit', edit_workout_path(@workout), class: 'btn btn-success' %>
+    </div>
+  </div>
+</div>
